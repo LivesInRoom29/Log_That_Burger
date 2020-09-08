@@ -1,0 +1,31 @@
+{
+  "name": "log-that_burger",
+  "version": "1.0.0",
+  "description": "A restaurant app that lets users input the names of burgers they'd like to eat; when the name is submitted, the burger will appear on screen with a DEVOUR button.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LivesInRoom29/Log-That_Burger.git"
+  },
+  "keywords": [
+    "MySQL",
+    "Node",
+    "Express",
+    "Handlebars"
+  ],
+  "author": "molly_kizer <molly.kizer@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/LivesInRoom29/Log-That_Burger/issues"
+  },
+  "homepage": "https://github.com/LivesInRoom29/Log-That_Burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}
