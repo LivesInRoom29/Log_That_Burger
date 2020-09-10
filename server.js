@@ -1,5 +1,4 @@
 // Dependencies
-const mysql = require('mysql');
 const express = require('express');
 const exphbs = require('express-handlebars');
 
@@ -14,20 +13,7 @@ const PORT = process.env.PORT || 7070;
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
-// ***** To be moved to a separate file
-const connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "",
-    database: ""
-});
 
-connection.connect((err) => {
-    if (err) throw err;
-    console.log(`Connected to databse, connection id: ${connection.threadId}`);
-});
-//************* */
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
