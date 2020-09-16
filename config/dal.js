@@ -32,9 +32,14 @@ class DAL {
     };
 
     updateOne(id) {
-        const queryString = `UPDATE burgers SET devoured = 1 WHERE ?`
+        const queryString = `UPDATE burgers SET devoured = 1 WHERE ?`;
         return this.query(queryString, [`id = ${id}`]);
-    }
+    };
+
+    deleteOne(id) {
+        const queryString = 'DELETE FROM burgers WHERE ?';
+        return this.query(queryString, [`id = ${id}`]);
+    };
 }
 
 module.exports = DAL;
