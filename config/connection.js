@@ -9,7 +9,9 @@ const connection = mysql.createConnection({
 });
 
 connection.connect((err) => {
-    if (err) throw err;
+    if (err) {
+        console.error(`Error connecting: ${err.stack}`);
+    }
     console.log(`Connected to databse, connection id: ${connection.threadId}`);
 });
 
