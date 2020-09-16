@@ -22,23 +22,25 @@ class DAL {
         });
     };
 
-    selectAll() {
-        return this.query('SELECT * FROM burgers')
+    selectAll(tableInput) {
+        return this.query(`SELECT * FROM ${tableInput}`);
     };
 
-    insertOne(burger) {
-        const queryString = `INSERT INTO burgers (burger_name) VALUES (?)`
-        return this.query(queryString, [burger]);
+    insertOne(table, columns, values) {
+        const queryString = `INSERT INTO ${table} (${columns}) VALUES (?)`
+        return this.query(queryString, values);
     };
 
-    updateOne(id) {
-        const queryString = `UPDATE burgers SET devoured = 1 WHERE ?`;
-        return this.query(queryString, [`id = ${id}`]);
+// Might need helper function here to convert object key/value pair to corrent sql syntax (ex {devoured: 1} --> 'devoured = 1')
+// Or just use correct syntax when inputting?
+    updateOne(table, columnObjVal, condition) {
+        const queryString = `UPDATE ${table} SET ${columnObjVal} WHERE ${condition}`;
+        return this.query(queryString);
     };
 
-    deleteOne(id) {
-        const queryString = 'DELETE FROM burgers WHERE ?';
-        return this.query(queryString, [`id = ${id}`]);
+    deleteOne(table, condition) {
+        const queryString = `DELETE FROM ${table} WHERE ${condition}`;
+        return this.query(queryString);
     };
 }
 
