@@ -9,7 +9,11 @@ const app = express();
 // process.env.PORT lets the port be set by Heroku
 const PORT = process.env.PORT || 7070;
 
-app.use(express.static("/public")); // this is the folder it's going to look in for if it exists (for html script and style links)
+app.use(express.static("public")); // this is the folder it's going to look in for if it exists (for html script and style links)
+
+// Parse application body as JSON objects
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Set Handlebars as the default templating engine
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
