@@ -5,9 +5,14 @@ const router = express.Router();
 const burger = require('../models/burger.js');
 
 router.get('/', async (req, res) => {
-    const handleBarsObj = { burgers: await burger.all() };
-    console.log(handleBarsObj);
-    res.render("index", handleBarsObj);
+    try {
+        const handleBarsObj = { burgers: await burger.all() };
+        console.log(handleBarsObj);
+        res.render("index", handleBarsObj);
+    } catch(err) {
+        console.log(err);
+        res.setStatus(500);
+    }
 })
 
 module.exports = router;
