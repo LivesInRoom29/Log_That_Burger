@@ -2,27 +2,30 @@
 
 Create a button in index.handlebars that will submit the user input into the database. --}}
 
-<h2>Add a Burger</h2>
+
 
 <div class="container">
 
+    <h3>Add a Burger</h3>
+
     <div class="row">
-        <form action="" class="create-burger">
+        <form class="create-burger" method="POST">
             <label for="bname">Burger Name:</label>
-            <input type="text" id="bname" name="name">
+            <input type="text" id="bname" name="bname">
+            <button type="submit">Add Burger</button>
         </form>
     </div>
 
     <div class="row">
         <div class="col s6">
-            <h2>Burgers to Eat</h2>
+            <h3>Burgers to Eat</h3>
 
             <ul>
                 {{#each burgers}}
                     <li>
                         {{this.burger_name}}
                         {{#unless devoured}}
-                            {{> burgers/burger-block devoured=0}}
+                            {{> burgers/burger-block devoured=false}}
                         {{/unless}}
                     </li>
                 {{/each}}
@@ -31,12 +34,12 @@ Create a button in index.handlebars that will submit the user input into the dat
         </div>
 
         <div class="col s6">
-            <h2>Devoured Burgers</h2>
+            <h3>Devoured Burgers</h3>
 
             <ul>
                 {{#each burgers}}
                     {{#if devoured}}
-                        {{> burgers/burger-block devoured=1}}
+                        {{> burgers/burger-block devoured=true}}
                     {{/if}}
                 {{/each}}
             </ul>
