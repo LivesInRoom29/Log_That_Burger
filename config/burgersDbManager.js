@@ -1,4 +1,4 @@
 const DAL = require('./dal');
-const connection = require('./connection');
+var connection = require('./connection');
 
 module.exports = new DAL(connection);
