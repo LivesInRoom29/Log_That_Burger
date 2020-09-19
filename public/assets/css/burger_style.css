@@ -5,27 +5,39 @@ body {
     background-color: rgba(250, 250, 128, 0.871);
 }
 
+/* for the App title */
 h1 {
-    font-size: 5.2vw;
+    font-size: 4vw;
     font-family: 'Ranchers', cursive;
     text-align: center;
     background-color: aqua;
     padding: 20px;
-    margin-left: 60px;
-    margin-right: 60px;
+    /* margin-left: 60px;
+    margin-right: 60px; */
     border: 5px dotted black;
+    width: 33vw;
+    margin: 20px auto;
+    transform: rotate(-10deg);
+    box-shadow: darkblue;
 }
 
-h3 {
-    font-size: 3.2vw;
+/* for the section titles - Burgers to Eat, Devoured Burgers, and Add a Burger */
+h3, h4 {
+    font-size: 2.8vw;
     font-family: 'Architects Daughter', cursive;
     font-weight: bold;
     text-align: center;
-
+    margin-top: 10px;
 }
 
+h4 {
+    font-size: 2.5vw;
+    margin-bottom: 0;
+}
+
+/* for the burger  names */
 h6 {
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     font-family: 'Grandstander', cursive;
     font-weight: 300;
     /* background-color: rgba(128, 128, 128, 0.3); */
@@ -35,9 +47,8 @@ h6 {
 }
 
 button {
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     font-family: 'Special Elite', cursive;
-
 }
 
 div.container {
@@ -49,6 +60,7 @@ div.row {
     justify-content: space-between;
 }
 
+/* for the columns that contain the burger info */
 div.col.s6.uneaten-burgers-container, .devoured-burgers-container {
     background-color: coral;
     border-style: double;
@@ -57,11 +69,13 @@ div.col.s6.uneaten-burgers-container, .devoured-burgers-container {
     margin-right: 10px;
 }
 
+/* change margin on the right column so the margin is in the middle of the columns */
 div.col.s6.devoured-burgers-container {
     margin-left: 10px;
     margin-right: 0;
 }
 
+/* set background and border of the burger names */
 h6.uneaten-burger {
     background-color: rgba(243, 239, 239, 0.3);
     border-style: outset;
@@ -72,10 +86,7 @@ h6.devoured-burger {
     border-style: inset;
 }
 
-div.devoured-burgers-container {
-    float: right;
-}
-
+/* For the bottom section, where new burgers are added */
 div.add-burger-container {
     display: flex;
     flex-direction: column;
@@ -85,5 +96,16 @@ div.add-burger-container {
     border-top: 5px double black;
     border-bottom: 5px double black;
     margin-bottom: 40px;
+}
 
+div.row.add-burger-title {
+    margin-bottom: 0;
+}
+
+div.row.add-burger-form {
+    margin-bottom: 0;
+}
+
+div.input-field {
+    margin-top: 0;
 }

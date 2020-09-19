@@ -64,15 +64,17 @@ Create a button in index.handlebars that will submit the user input into the dat
 
     <div class="add-burger-container container">
 
-            <div class="row">
-                <h3>Add a Burger</h3>
+            <div class="row add-burger-title">
+                <h4>Add a Burger</h4>
             </div>
 
-            <div class="row">
+            <div class="row add-burger-form">
                 <form class="create-burger" method="POST">
-                    <label for="bname">Burger Name:</label>
-                    <input type="text" id="bname" name="bname">
-                    <button type="submit">Add Burger</button>
+                    <div class="input-field">
+                        <label for="bname">Burger Name:</label>
+                        <input class="name-input" type="text" id="bname" name="bname">
+                        <button type="submit">Add Burger</button>
+                    </div>
                 </form>
             </div>
 
