@@ -4,6 +4,7 @@
 body {
     background-color: rgba(250, 250, 128, 0.871);
 }
+
 h1 {
     font-size: 5.2vw;
     font-family: 'Ranchers', cursive;
@@ -12,20 +13,23 @@ h1 {
     padding: 20px;
     margin-left: 60px;
     margin-right: 60px;
-    border-style: dotted;
+    border: 5px dotted black;
 }
 
 h3 {
     font-size: 3.2vw;
     font-family: 'Architects Daughter', cursive;
+    font-weight: bold;
+    text-align: center;
+
 }
 
 h6 {
     font-size: 1.5vw;
     font-family: 'Grandstander', cursive;
     font-weight: 300;
-    background-color: rgba(128, 128, 128, 0.3);
-    border-style: inset;
+    /* background-color: rgba(128, 128, 128, 0.3); */
+    /* border-style: inset; */
     padding: 10px;
     margin-top: 0;
 }
@@ -43,7 +47,6 @@ div.container {
 div.row {
     display: flex;
     justify-content: space-between;
-    margin-left: 0;
 }
 
 div.col.s6.uneaten-burgers-container, .devoured-burgers-container {
@@ -51,8 +54,36 @@ div.col.s6.uneaten-burgers-container, .devoured-burgers-container {
     border-style: double;
     border-radius: 20px;
     margin-left: 0;
+    margin-right: 10px;
+}
+
+div.col.s6.devoured-burgers-container {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+h6.uneaten-burger {
+    background-color: rgba(243, 239, 239, 0.3);
+    border-style: outset;
+}
+
+h6.devoured-burger {
+    background-color: rgba(128, 128, 128, 0.3);
+    border-style: inset;
 }
 
 div.devoured-burgers-container {
     float: right;
+}
+
+div.add-burger-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-top: 5px double black;
+    border-bottom: 5px double black;
+    margin-bottom: 40px;
+
 }
