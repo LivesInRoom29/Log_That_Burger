@@ -5,7 +5,7 @@ const router = express.Router();
 const burger = require('../models/burger.js');
 
 // To get all burgers from the db and send the object to handlebars
-router.get('/index', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const handleBarsObj = { burgers: await burger.all() };
         res.render("index", handleBarsObj);
