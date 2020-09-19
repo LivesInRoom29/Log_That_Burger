@@ -3,9 +3,12 @@
     {{name}}
     {{!-- if the burger is not devoured, include the buttons; otherwise don't --}}
     {{#unless devoured}}
-    <button class="devour" data-id="{{id}}">DEVOUR!</button>
+    <button class="devour" data-id="{{this.id}}">DEVOUR!</button>
 
     <button class="delete-burger" data-id="{{this.id}}">DELETE :(</button>
     {{/unless}}
+    {{#if devoured}}
+    <button class="make-again" data-id="{{this.id}}">Make Burger Again</button>
+    {{/if}}
 </li>
 
