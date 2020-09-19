@@ -6,14 +6,9 @@ Create a button in index.handlebars that will submit the user input into the dat
 
 <div class="container">
 
-    <h3>Add a Burger</h3>
-
-    <div class="row">
-        <form class="create-burger" method="POST">
-            <label for="bname">Burger Name:</label>
-            <input type="text" id="bname" name="bname">
-            <button type="submit">Add Burger</button>
-        </form>
+    <div class="burger-box-top">
+            <div class="bread-top"></div>
+            <div class="salad"></div>
     </div>
 
     <div class="row">
@@ -60,8 +55,23 @@ Create a button in index.handlebars that will submit the user input into the dat
             </ul>
 
         </div>
+    </div>
 
+    <div class="burger-box-bottom">
+        <div class="salad-bottom"></div>
+        <div class="bread-bottom"></div>
+    </div>
 
+    <div class="add-burger-container">
+        <h3>Add a Burger</h3>
+
+        <div class="row">
+            <form class="create-burger" method="POST">
+                <label for="bname">Burger Name:</label>
+                <input type="text" id="bname" name="bname">
+                <button type="submit">Add Burger</button>
+            </form>
+        </div>
     </div>
 
 
