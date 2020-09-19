@@ -17,15 +17,21 @@ Create a button in index.handlebars that will submit the user input into the dat
     </div>
 
     <div class="row">
-        <div class="col s6">
+        <div class="col s6 uneaten-burgers-container">
             <h3>Burgers to Eat</h3>
 
             <ul>
                 {{#each burgers}}
-                    <li>
+                    <li class="uneaten-burgers">
                         {{#unless devoured}}
-                            {{this.burger_name}}
-                            {{> burgers/burger-block devoured=false}}
+                            <div class="row">
+                                <div class="col s7">
+                                    <h6>{{this.burger_name}}</h6>
+                                </div>
+                                <div class= "col s5">
+                                    {{> burgers/burger-block devoured=false}}
+                                </div>
+                            </div>
                         {{/unless}}
                     </li>
                 {{/each}}
@@ -33,14 +39,22 @@ Create a button in index.handlebars that will submit the user input into the dat
 
         </div>
 
-        <div class="col s6">
+        <div class="col s5 devoured-burgers-container">
             <h3>Devoured Burgers</h3>
 
             <ul>
                 {{#each burgers}}
                     {{#if devoured}}
-                        {{this.burger_name}}
-                        {{> burgers/burger-block devoured=true}}
+                        <li class="devoured-burger">
+                            <div class="row">
+                                <div class="col s7">
+                                    <h6>{{this.burger_name}}</h6>
+                                </div>
+                                <div class="col s5">
+                                    {{> burgers/burger-block devoured=true}}
+                                </div>
+                            </div>
+                        </li>
                     {{/if}}
                 {{/each}}
             </ul>
