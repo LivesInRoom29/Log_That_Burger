@@ -15,6 +15,7 @@ router.get('/index', async (req, res) => {
     }
 });
 
+// To create add a new burger to the db
 router.post('/index/api/burgers', async (req, res) => {
     try {
         const result = await burger.create(["burger_name"], [req.body.burger_name]);
@@ -25,9 +26,58 @@ router.post('/index/api/burgers', async (req, res) => {
     }
 });
 
-// router.put('index/api/burgers/:id'), async (req, res) => {
-//     const condition = req.params.id;
-//     console.log(condition)
-// }
+// To update the burger and change the devoured state to true (using "Devour" button);
+router.put('/index/api/burgers/:id', async (req, res) => {
+    const condition = req.params.id;
+    const colObjValue = "devoured = 1";
+
+    try {
+        const result = await burger.update(colObjValue, condition);
+        if(result.changedRows === 0) {
+            // if no rows are changed, the ID must not exist
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+});
+
+// To update the burger and change devoured state to false (using "Make again" button)
+router.put('/index/api/burgers-make-again/:id', async (req, res) => {
+    const condition = req.params.id;
+    const colObjValue = "devoured = 0";
+
+    try {
+        const result = await burger.update(colObjValue, condition);
+        if(result.changedRows === 0) {
+            // if no rows are changed, the ID must not exist
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+});
+
+router.delete('/index/api/burgers/:id', async (req, res) => {
+    const condition = req.params.id;
+    console.log("delete id ", condition);
+    try {
+        const result = await burger.delete(condition);
+
+        res.status(200).end();
+
+    } catch(err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+})
+
+
 
 module.exports = router;
