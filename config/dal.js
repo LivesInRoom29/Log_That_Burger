@@ -31,15 +31,13 @@ class DAL {
         return this.query(queryString, values);
     };
 
-// Might need helper function here to convert object key/value pair to corrent sql syntax (ex {devoured: 1} --> 'devoured = 1')
-// Or just use correct syntax when inputting?
-    updateOne(table, columnObjVal, condition) {
-        const queryString = `UPDATE ${table} SET ${columnObjVal} WHERE ${condition}`;
+    updateOne(table, columnEqlVal, condition) {
+        const queryString = `UPDATE ${table} SET ${columnEqlVal} WHERE id = ${condition}`;
         return this.query(queryString);
     };
 
     deleteOne(table, condition) {
-        const queryString = `DELETE FROM ${table} WHERE ${condition}`;
+        const queryString = `DELETE FROM ${table} WHERE id = ${condition}`;
         return this.query(queryString);
     };
 }
